@@ -3,13 +3,13 @@ from pinecone_rag import *
 
 st.title('📧 LangTai: Central-Thai to Southern-Thai Assistant App')
 
-PINECONE_API_KEY = st.sidebar.text_input('Pinecone API Key')
-GOOGLE_API_KEY = st.sidebar.text_input('Google API Key')
-HUGGINGFACE_API_KEY = st.sidebar.text_input('HuggingFaceHub API Key')
+# PINECONE_API_KEY = st.sidebar.text_input('Pinecone API Key')
+# GOOGLE_API_KEY = st.sidebar.text_input('Google API Key')
+# HUGGINGFACE_API_KEY = st.sidebar.text_input('HuggingFaceHub API Key')
 
-os.environ['PINECONE_API_KEY'] = PINECONE_API_KEY
-os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
-os.environ['HUGGINGFACE_API_KEY'] = HUGGINGFACE_API_KEY
+os.environ['PINECONE_API_KEY'] = st.secrets["PINECONE_API_KEY"]
+os.environ['GOOGLE_API_KEY'] = st.secrets["GOOGLE_API_KEY"]
+os.environ['HUGGINGFACE_API_KEY'] = st.secrets["HUGGINGFACE_API_KEY"]
 
 embeddings = HuggingFaceHubEmbeddings(
             huggingfacehub_api_token=HUGGINGFACE_API_KEY, model="intfloat/multilingual-e5-base"

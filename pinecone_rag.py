@@ -1,3 +1,4 @@
+import streamlit as st
 import openai
 import os
 import langchain
@@ -14,9 +15,9 @@ from langchain.llms import OpenAI
 
 idx_name = "llm-demo-usecases"
 
-# PINECONE_API_KEY = os.getenv('PINECONE_API_KEY', "value does not exist")
-# GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', "value does not exist")
-# HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY', "value does not exist")
+PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+HUGGINGFACE_API_KEY = st.secrets["HUGGINGFACE_API_KEY"]
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 

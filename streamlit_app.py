@@ -30,6 +30,6 @@ with st.form('my_form'):
                 texts.append(res[0].page_content)
 
         # LLM with RAG
-        reply_message = extract_product(text_1=texts[0], text_2=texts[1], text_3=texts[2], text_4=texts[3], text_5=texts[4], message=query)
+        reply_message = extract_product(text_1=texts[0], text_2=texts[1], text_3=texts[2], text_4=texts[3], text_5=texts[4], message=text)
 
         st.info(reply_message)

@@ -14,9 +14,9 @@ from langchain.llms import OpenAI
 
 idx_name = "llm-demo-usecases"
 
-PINECONE_API_KEY = os.getenv('PINECONE_API_KEY', "value does not exist")
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', "value does not exist")
-HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY', "value does not exist")
+# PINECONE_API_KEY = os.getenv('PINECONE_API_KEY', "value does not exist")
+# GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', "value does not exist")
+# HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY', "value does not exist")
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 

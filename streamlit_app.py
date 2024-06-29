@@ -22,17 +22,14 @@ with st.form('my_form'):
     submitted = st.form_submit_button('Submit')
 
     if submitted:
-        try: 
-            vector = embeddings.embed_query(text)
-            results = pinecone_query(index_name=idx_name, embeddings=embeddings, query=text, output_num=5)
+        vector = embeddings.embed_query(text)
+        results = pinecone_query(index_name=idx_name, embeddings=embeddings, query=text, output_num=5)
 
-            texts = []
-            for res in results: 
-                    texts.append(res[0].page_content)
+        texts = []
+        for res in results: 
+                texts.append(res[0].page_content)
 
-            # LLM with RAG
-            reply_message = extract_product(text_1=texts[0], text_2=texts[1], text_3=texts[2], text_4=texts[3], text_5=texts[4], message=text)
+        # LLM with RAG
+        reply_message = extract_product(text_1=texts[0], text_2=texts[1], text_3=texts[2], text_4=texts[3], text_5=texts[4], message=text)
 
-            st.info(reply_message)
-        except: 
-             st.warning('Please enter your API keys!', icon='⚠')
+        st.info(reply_message)
